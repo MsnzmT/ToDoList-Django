@@ -22,7 +22,9 @@ class ListDetailSerializer(serializers.ModelSerializer):
 
 
 class ListSerializer(serializers.ModelSerializer):
+    tasks = TaskSerializer(read_only=True, many=True)
+
     class Meta:
         model = List
-        fields = ('name', )
+        fields = ('name', 'tasks')
 
