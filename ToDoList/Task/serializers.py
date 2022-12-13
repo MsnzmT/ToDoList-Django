@@ -13,7 +13,7 @@ class ListDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = List
-        fields = ('name', 'user', 'tasks')
+        fields = ('id', 'name', 'user', 'tasks')
 
     user = serializers.SlugRelatedField(
         read_only=True,

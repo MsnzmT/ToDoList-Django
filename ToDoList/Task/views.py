@@ -12,7 +12,7 @@ from .serializers import *
 class ListDetails(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = ListDetailSerializer
-    authentication_classes = (BasicAuthentication,)
+    #authentication_classes = (BasicAuthentication,)
 
     def get_queryset(self):
         return List.objects.filter(user__id=self.request.user.id)
@@ -23,7 +23,7 @@ class ListDetails(generics.ListCreateAPIView):
 
 class ListEdit(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]
-    authentication_classes = (BasicAuthentication, SessionAuthentication)
+    #authentication_classes = (BasicAuthentication, SessionAuthentication)
     queryset = List.objects.all()
     serializer_class = ListSerializer
 
@@ -37,7 +37,7 @@ class TaskEdit(generics.RetrieveUpdateDestroyAPIView):
 class TaskDetail(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
     serializer_class = TaskEditSerializer
-    authentication_classes = (BasicAuthentication,)
+    #authentication_classes = (BasicAuthentication,)
 
     def perform_create(self, serializer):
         return serializer.save(user=self.request.user)
