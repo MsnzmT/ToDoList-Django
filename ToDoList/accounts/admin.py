@@ -9,7 +9,6 @@ class UserAdmin(DefaultUserAdmin):
         (None, {'fields': ('username', 'password')}),
         ('Personal info', {
             'fields': (
-                'full_name',
                 'email',
             )
         }),
@@ -28,13 +27,11 @@ class UserAdmin(DefaultUserAdmin):
     list_display = (
         'username',
         'email',
-        'full_name',
         'is_staff',
     )
 
     search_fields = (
         'username',
-        'full_name',
         'phone_number',
         'email',
     )
