@@ -26,8 +26,3 @@ class ListSerializer(serializers.ModelSerializer):
         model = List
         fields = ('name', )
 
-
-class TaskEditSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Task
-        fields = ('text', )

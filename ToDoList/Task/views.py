@@ -31,12 +31,12 @@ class ListEdit(generics.RetrieveUpdateDestroyAPIView):
 class TaskEdit(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsAuthenticated]
     queryset = Task.objects.all()
-    serializer_class = TaskEditSerializer
+    serializer_class = TaskSerializer
 
 
 class TaskDetail(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
-    serializer_class = TaskEditSerializer
+    serializer_class = TaskSerializer
     #authentication_classes = (BasicAuthentication,)
 
     def perform_create(self, serializer):
